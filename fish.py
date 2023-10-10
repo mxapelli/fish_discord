@@ -39,6 +39,6 @@ while True:
 
     captcha_location = pyautogui.locateCenterOnScreen('images/captcha.PNG', confidence=0.95)
     if captcha_location:
-        break
+        time.sleep(300)
 
     time.sleep(0.1)  # General delay to prevent 100% CPU usage

@@ -24,7 +24,7 @@ for i in range(1, 10):  # Change 101 to one more than the number of pictures you
 print("Fishing...")
 while True:
     # Click the "Fish again" button
-    fish_location = pyautogui.locateCenterOnScreen('fish_button.png', confidence=0.8)
+    fish_location = pyautogui.locateCenterOnScreen('images/fish_button.png', confidence=0.8)
     if fish_location:
         pyautogui.click(fish_location)
         time.sleep(2.8)  # Wait 3.5 seconds before trying again
@@ -32,12 +32,12 @@ while True:
     # Every 300 seconds, click the "Sell" button
     current_time = time.time()
     if current_time - last_sell_time >= 300:
-        sell_location = pyautogui.locateCenterOnScreen('sell_button.png', confidence=0.8)
+        sell_location = pyautogui.locateCenterOnScreen('images/sell_button.png', confidence=0.8)
         if sell_location:
             pyautogui.click(sell_location)
         last_sell_time = current_time  # Update the last sell time
 
-    captcha_location = pyautogui.locateCenterOnScreen('captcha.PNG', confidence=0.8)
+    captcha_location = pyautogui.locateCenterOnScreen('images/captcha.PNG', confidence=0.8)
     if captcha_location:
         break
 

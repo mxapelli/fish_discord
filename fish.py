@@ -5,9 +5,6 @@ import os
 
 last_sell_time = time.time()  # To keep track of when you last clicked the sell button
 
-
-
-
 folder_path = "captcha"  # Replace with the path to your folder
 
 # Let's say you have 100 pictures (or replace 100 with the number you have)
@@ -27,7 +24,7 @@ while True:
     fish_location = pyautogui.locateCenterOnScreen('images/fish_button.png', confidence=0.9)
     if fish_location:
         pyautogui.click(fish_location)
-        time.sleep(2.9)  # Wait 3.5 seconds before trying again
+        time.sleep(2.7)  # Wait 3.5 seconds before trying again
 
     # Every 300 seconds, click the "Sell" button
     current_time = time.time()
@@ -37,7 +34,7 @@ while True:
             pyautogui.click(sell_location)
         last_sell_time = current_time  # Update the last sell time
 
-    captcha_location = pyautogui.locateCenterOnScreen('images/captcha.PNG', confidence=0.95)
+    captcha_location = pyautogui.locateCenterOnScreen('images/captcha.PNG', confidence=0.90)
     if captcha_location:
         time.sleep(300)
 

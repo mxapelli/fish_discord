@@ -24,7 +24,7 @@ while True:
     fish_location = pyautogui.locateCenterOnScreen('images/fish_button.png', confidence=0.9)
     if fish_location:
         pyautogui.click(fish_location)
-        time.sleep(2.7)  # Wait 3.5 seconds before trying again
+        time.sleep(2.51)  # Wait 3.5 seconds before trying again
 
     # Every 300 seconds, click the "Sell" button
     current_time = time.time()
@@ -36,6 +36,12 @@ while True:
 
     captcha_location = pyautogui.locateCenterOnScreen('images/captcha.PNG', confidence=0.90)
     if captcha_location:
-        time.sleep(300)
+        print("Stoped fishing :(")
+        time.sleep(1)
+        continue_location = pyautogui.locateCenterOnScreen('images/continue.PNG', confidence=0.8)
+        if continue_location:
+            print("Continue fishing")
+            pyautogui.scroll(500)
+            pyautogui.click(fish_location)
+            pyautogui.scroll(-520)
 
-    time.sleep(0.1)  # General delay to prevent 100% CPU usage

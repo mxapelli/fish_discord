@@ -41,7 +41,9 @@ while True:
         continue_location = pyautogui.locateCenterOnScreen('images/continue.PNG', confidence=0.8)
         if continue_location:
             print("Continue fishing")
-            pyautogui.scroll(500)
-            pyautogui.click(fish_location)
-            pyautogui.scroll(-520)
+            pyautogui.scroll(1000)
+            if fish_location:
+                pyautogui.click(fish_location)
+                time.sleep(1)
+                pyautogui.scroll(-1020)
 
